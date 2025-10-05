@@ -10,11 +10,6 @@ namespace RandomPracticesCS
     {
         public void Convertor()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("-----------------------------------------------------------------------------");
-            Console.ResetColor();
-
-            string final;
             do
             {
                 Console.WriteLine("\nWhat do you want to convert?\n1. ºC to ºF   -   2. ºF to ºC");
@@ -53,23 +48,7 @@ namespace RandomPracticesCS
                     celsius = (fahrenheit - 32) / 1.8;
                     Console.WriteLine($"{fahrenheit}ºF are {Math.Round(celsius, 2)}ºC");
                 }
-
-                Console.WriteLine("\nDo you wanna try again the convertor?\nYes (Y) - No (N)");
-                final = Console.ReadLine().ToLower();
-                while (final != "yes" && final != "y" && final != "no" && final != "n")
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"\nERROR: you must say Yes (Y) or No (N)");
-                    Console.ResetColor();
-                    final = Console.ReadLine().ToLower();
-                }
-            } while (final == "yes" || final == "y");
-
-
-
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("-----------------------------------------------------------------------------");
-            Console.ResetColor();
+            } while (Request.TryAgain("Convert ºC <--> ºF"));
         }
     }
 }
