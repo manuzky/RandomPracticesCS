@@ -25,7 +25,7 @@ namespace RandomPracticesCS
         public static void NaN()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"\nERROR: You wrote a wrong digit, has to be a number. Try it again.");
+            Console.WriteLine($"\nERROR: Wrong digit, it has to be a number. Try it again.");
             Console.ResetColor();
         }
 
@@ -37,7 +37,7 @@ namespace RandomPracticesCS
             final = Console.ReadLine().ToLower();
             while (final != "yes" && final != "y" && final != "no" && final != "n")
             {
-                Request.YesOrNo();
+                YesOrNo();
                 final = Console.ReadLine().ToLower();
             }
 
